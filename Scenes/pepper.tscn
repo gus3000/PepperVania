@@ -1,0 +1,125 @@
+[gd_scene load_steps=18 format=3 uid="uid://c8ayyj7wew3j2"]
+
+[ext_resource type="PackedScene" uid="uid://cgmfgn7omx6x7" path="res://Models/pepper.glb" id="1_7py1n"]
+[ext_resource type="Script" path="res://Src/pepper.gd" id="2_7c7ou"]
+[ext_resource type="Script" path="res://Src/State/state_machine.gd" id="4_jtwib"]
+[ext_resource type="Script" path="res://Src/State/Player/idle.gd" id="5_hnr86"]
+[ext_resource type="Script" path="res://Src/State/Player/run.gd" id="6_4ir4y"]
+[ext_resource type="Script" path="res://Src/State/Player/air.gd" id="7_d4pmg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g7lo2"]
+radius = 0.178845
+height = 0.605305
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qer0d"]
+animation = &"Breathe"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r16ad"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xmwwq"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_wicm5"]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_cwh4r"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_qp6mh"]
+graph_offset = Vector2(-673, 23)
+nodes/output/position = Vector2(400, 140)
+nodes/run/node = SubResource("AnimationNodeAnimation_r16ad")
+nodes/run/position = Vector2(-300, 280)
+nodes/walk/node = SubResource("AnimationNodeAnimation_xmwwq")
+nodes/walk/position = Vector2(-340, 100)
+nodes/walk_run/node = SubResource("AnimationNodeBlend2_wicm5")
+nodes/walk_run/position = Vector2(80, 140)
+nodes/walk_scale/node = SubResource("AnimationNodeTimeScale_cwh4r")
+nodes/walk_scale/position = Vector2(-140, 100)
+node_connections = [&"output", 0, &"walk_run", &"walk_run", 0, &"walk_scale", &"walk_run", 1, &"run", &"walk_scale", 0, &"walk"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ep85p"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hb5gy"]
+advance_mode = 2
+advance_condition = &"moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6vyd4"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_87do6"]
+states/Breathe/node = SubResource("AnimationNodeAnimation_qer0d")
+states/Breathe/position = Vector2(342, 100)
+states/Move/node = SubResource("AnimationNodeBlendTree_qp6mh")
+states/Move/position = Vector2(517, 100)
+transitions = ["Start", "Breathe", SubResource("AnimationNodeStateMachineTransition_ep85p"), "Breathe", "Move", SubResource("AnimationNodeStateMachineTransition_hb5gy"), "Move", "Breathe", SubResource("AnimationNodeStateMachineTransition_6vyd4")]
+graph_offset = Vector2(-114, -94)
+
+[node name="PepperCharacter" type="CharacterBody3D"]
+script = ExtResource("2_7c7ou")
+speed = 4.0
+rotation_speed = 5.0
+
+[node name="PepperModel" parent="." instance=ExtResource("1_7py1n")]
+
+[node name="Skeleton3D" parent="PepperModel/PepperArmature" index="0"]
+bones/0/position = Vector3(4.20425e-10, 0.252405, -0.238352)
+bones/0/scale = Vector3(0.962339, 1.10402, 0.962339)
+bones/1/scale = Vector3(1.04435, 0.92683, 1.04435)
+bones/6/rotation = Quaternion(0.881921, -0.471397, 2.78799e-07, 1.29468e-06)
+bones/7/rotation = Quaternion(0.881921, -0.471397, 1.73666e-07, 1.23848e-06)
+bones/8/rotation = Quaternion(0.881921, 0.471397, -2.61983e-07, 1.27786e-06)
+bones/9/rotation = Quaternion(0.881921, 0.471397, -1.5685e-07, 1.22167e-06)
+bones/14/rotation = Quaternion(0.695173, -1.33533e-06, -1.45359e-06, 0.718842)
+bones/14/scale = Vector3(1.04435, 0.930207, 1.04481)
+bones/15/rotation = Quaternion(0.943969, -1.86156e-07, -1.0003e-07, -0.330034)
+bones/15/scale = Vector3(1.04435, 0.962159, 1.02006)
+bones/16/rotation = Quaternion(0.242342, 1.46728e-09, -1.85122e-07, 0.970191)
+bones/17/rotation = Quaternion(0.326823, 2.08597e-09, -2.4844e-07, 0.945086)
+bones/18/position = Vector3(5.94471e-08, -0.121947, -0.395404)
+bones/18/scale = Vector3(1.04435, 0.92683, 1.04435)
+bones/19/rotation = Quaternion(0.722715, -6.52402e-07, -2.81554e-07, 0.691146)
+bones/19/scale = Vector3(1.04435, 1.0542, 1.03864)
+bones/20/rotation = Quaternion(0.468166, 1.52469e-06, 1.04436e-06, 0.883641)
+bones/20/scale = Vector3(1.04435, 0.930207, 1.04481)
+bones/21/rotation = Quaternion(0.886244, 6.23524e-07, 2.06551e-07, 0.46322)
+bones/21/scale = Vector3(1.04435, 1.0542, 1.03864)
+bones/22/position = Vector3(2.40023e-08, -0.269828, -0.158719)
+bones/22/scale = Vector3(1.04435, 0.92683, 1.04435)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.177947, 0)
+shape = SubResource("CapsuleShape3D_g7lo2")
+
+[node name="LookAtTarget" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.320783, 0.682144)
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("subject", "state")]
+script = ExtResource("4_jtwib")
+subject = NodePath("..")
+state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("5_hnr86")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("6_4ir4y")
+
+[node name="Air" type="Node" parent="StateMachine"]
+script = ExtResource("7_d4pmg")
+
+[node name="Pepper" type="Node" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_87do6")
+anim_player = NodePath("../PepperModel/AnimationPlayer")
+active = true
+parameters/conditions/idle = false
+parameters/conditions/moving = false
+parameters/Move/walk_run/blend_amount = 0.25
+parameters/Move/walk_scale/scale = 0.5
+
+[connection signal="ready" from="." to="StateMachine" method="_on_pepper_character_ready"]
+
+[editable path="PepperModel"]
