@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwtc6gwhxlfex"
-path="res://.godot/imported/Peppervania3D.icon.png-7b0eaaf9eb90c6fbb3cc8fe43a467db0.ctex"
+path="res://.godot/imported/Peppervania3D.icon.png-2d251c937752a19f1a5adceeab7628f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Build/Web/Peppervania3D.icon.png"
-dest_files=["res://.godot/imported/Peppervania3D.icon.png-7b0eaaf9eb90c6fbb3cc8fe43a467db0.ctex"]
+source_file="res://docs/Peppervania3D.icon.png"
+dest_files=["res://.godot/imported/Peppervania3D.icon.png-2d251c937752a19f1a5adceeab7628f8.ctex"]
 
 [params]
 

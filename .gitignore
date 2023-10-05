@@ -2,3 +2,4 @@
 .godot/
 Build/Web/*
 Build/Win/*
+Build/Video/*

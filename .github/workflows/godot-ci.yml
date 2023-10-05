@@ -1,5 +1,5 @@
-# name: "godot-ci export"
-# on: push
+name: "godot-ci export"
+on: push
 
 # permissions:
 #   contents: read
@@ -10,7 +10,11 @@
 #   group: "pages"
 #   cancel-in-progress: false
 
-# jobs:
+jobs:
+  dummy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "I'm a dummy"
 #   export_game:
 #     runs-on: ubuntu-latest
 #     permissions: write-all

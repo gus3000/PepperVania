@@ -6,11 +6,11 @@ func enter(_msg := {}) -> void:
 	animator["parameters/conditions/moving"] = true
 
 
-func physics_update(delta: float)->void:
+func physics_update(delta: float) -> void:
 	if not player.is_on_floor():
 		state_machine.transition_to("Air")
 		return
-	
+
 	default_movement(delta)
 	player.move_and_slide()
 
@@ -21,11 +21,12 @@ func physics_update(delta: float)->void:
 	else:
 		animator["parameters/Move/walk_scale/scale"] = 1
 
-	if Input.is_action_just_pressed("jump"):
-		state_machine.transition_to("Air", {do_jump=true})
-	elif is_input_zero():
-		state_machine.transition_to("Idle")
-	
+	default_transitions(["Air", "Dash", "Idle"])
+	# if Input.is_action_just_pressed("jump"):
+	# 	state_machine.transition_to("Air", {do_jump=true})
+	# elif is_input_zero():
+	# 	state_machine.transition_to("Idle")
+
 
 func exit() -> void:
 	animator["parameters/conditions/moving"] = false

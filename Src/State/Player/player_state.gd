@@ -16,11 +16,7 @@ var input_vector_raw: Vector2:
 var direction: Vector3:
 	get:
 		var input_dir = input_vector_raw
-		return (
-			(get_viewport().get_camera_3d().basis * Vector3(input_dir.x, 0, input_dir.y))
-			# . rotated(Vector3.UP, -PI / 2)
-			# . normalized()
-		)
+		return get_viewport().get_camera_3d().basis * Vector3(input_dir.x, 0, input_dir.y)
 
 
 func default_movement(delta) -> void:
@@ -36,11 +32,32 @@ func default_movement(delta) -> void:
 	player.velocity.y -= player.gravity * delta
 
 
-func default_rotation(delta) -> void:
+func default_rotation(delta: float) -> void:
 	var from = player.basis.z
 	var to = Vector3(direction.x, 0, direction.z)
 	var angle = from.signed_angle_to(to, Vector3.UP)
 	player.rotate_y(angle * player.rotation_speed * delta)
+
+
+func default_transitions(allowed: Array[String]) -> void:
+	var all_transitions = ["Air", "Dash", "Idle", "Run"]
+	if allowed == null:
+		allowed = all_transitions
+
+	if "Dash" in allowed and Input.is_action_just_pressed("dash"):
+		return state_machine.transition_to("Dash")
+
+	if "Air" in allowed:
+		if Input.is_action_just_pressed("jump"):
+			return state_machine.transition_to("Air", {do_jump = true})
+		elif not player.is_on_floor():
+			return state_machine.transition_to("Air")
+
+	if "Run" in allowed and player.is_on_floor() and not input_vector_raw.is_zero_approx():
+		return state_machine.transition_to("Run")
+
+	if "Idle" in allowed and player.is_on_floor() and input_vector_raw.is_zero_approx():
+		return state_machine.transition_to("Idle")
 
 
 func is_input_zero() -> bool:

@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://c8ayyj7wew3j2"]
+[gd_scene load_steps=19 format=3 uid="uid://c8ayyj7wew3j2"]
 
 [ext_resource type="PackedScene" uid="uid://cgmfgn7omx6x7" path="res://Models/pepper.glb" id="1_7py1n"]
 [ext_resource type="Script" path="res://Src/pepper.gd" id="2_7c7ou"]
 [ext_resource type="Script" path="res://Src/State/state_machine.gd" id="4_jtwib"]
 [ext_resource type="Script" path="res://Src/State/Player/idle.gd" id="5_hnr86"]
 [ext_resource type="Script" path="res://Src/State/Player/run.gd" id="6_4ir4y"]
+[ext_resource type="Script" path="res://Src/State/Player/dash.gd" id="7_1ojuo"]
 [ext_resource type="Script" path="res://Src/State/Player/air.gd" id="7_d4pmg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g7lo2"]
@@ -39,6 +40,7 @@ node_connections = [&"output", 0, &"walk_run", &"walk_run", 0, &"walk_scale", &"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ep85p"]
 advance_mode = 2
+advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hb5gy"]
 advance_mode = 2
@@ -64,29 +66,19 @@ rotation_speed = 5.0
 [node name="PepperModel" parent="." instance=ExtResource("1_7py1n")]
 
 [node name="Skeleton3D" parent="PepperModel/PepperArmature" index="0"]
-bones/0/position = Vector3(4.20425e-10, 0.252405, -0.238352)
-bones/0/scale = Vector3(0.962339, 1.10402, 0.962339)
-bones/1/scale = Vector3(1.04435, 0.92683, 1.04435)
-bones/6/rotation = Quaternion(0.881921, -0.471397, 2.78799e-07, 1.29468e-06)
-bones/7/rotation = Quaternion(0.881921, -0.471397, 1.73666e-07, 1.23848e-06)
-bones/8/rotation = Quaternion(0.881921, 0.471397, -2.61983e-07, 1.27786e-06)
-bones/9/rotation = Quaternion(0.881921, 0.471397, -1.5685e-07, 1.22167e-06)
-bones/14/rotation = Quaternion(0.695173, -1.33533e-06, -1.45359e-06, 0.718842)
-bones/14/scale = Vector3(1.04435, 0.930207, 1.04481)
-bones/15/rotation = Quaternion(0.943969, -1.86156e-07, -1.0003e-07, -0.330034)
-bones/15/scale = Vector3(1.04435, 0.962159, 1.02006)
-bones/16/rotation = Quaternion(0.242342, 1.46728e-09, -1.85122e-07, 0.970191)
-bones/17/rotation = Quaternion(0.326823, 2.08597e-09, -2.4844e-07, 0.945086)
-bones/18/position = Vector3(5.94471e-08, -0.121947, -0.395404)
-bones/18/scale = Vector3(1.04435, 0.92683, 1.04435)
-bones/19/rotation = Quaternion(0.722715, -6.52402e-07, -2.81554e-07, 0.691146)
-bones/19/scale = Vector3(1.04435, 1.0542, 1.03864)
-bones/20/rotation = Quaternion(0.468166, 1.52469e-06, 1.04436e-06, 0.883641)
-bones/20/scale = Vector3(1.04435, 0.930207, 1.04481)
-bones/21/rotation = Quaternion(0.886244, 6.23524e-07, 2.06551e-07, 0.46322)
-bones/21/scale = Vector3(1.04435, 1.0542, 1.03864)
-bones/22/position = Vector3(2.40023e-08, -0.269828, -0.158719)
-bones/22/scale = Vector3(1.04435, 0.92683, 1.04435)
+bones/6/rotation = Quaternion(0.707107, -0.707107, 8.12028e-07, 8.12028e-07)
+bones/7/rotation = Quaternion(0.707107, -0.707107, 7.27735e-07, 7.27735e-07)
+bones/8/rotation = Quaternion(0.707107, 0.707107, -8.12028e-07, 8.12028e-07)
+bones/9/rotation = Quaternion(0.707107, 0.707107, -7.27735e-07, 7.27735e-07)
+bones/14/rotation = Quaternion(0.707105, -1.30516e-06, -1.43524e-06, 0.707108)
+bones/15/rotation = Quaternion(0.887011, 2.11572e-07, -2.72491e-07, -0.461748)
+bones/16/rotation = Quaternion(0.173649, 1.4894e-09, -1.32648e-07, 0.984808)
+bones/17/rotation = Quaternion(0.216439, 2.15487e-09, -1.6453e-07, 0.976296)
+bones/19/rotation = Quaternion(0.707107, -4.90336e-07, -5.55385e-07, 0.707107)
+bones/19/scale = Vector3(1, 1, 1)
+bones/20/rotation = Quaternion(0.707107, 1.2004e-06, 1.52561e-06, 0.707107)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/scale = Vector3(1, 1, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.177947, 0)
@@ -100,14 +92,17 @@ script = ExtResource("4_jtwib")
 subject = NodePath("..")
 state = NodePath("Idle")
 
+[node name="Air" type="Node" parent="StateMachine"]
+script = ExtResource("7_d4pmg")
+
+[node name="Dash" type="Node" parent="StateMachine"]
+script = ExtResource("7_1ojuo")
+
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("5_hnr86")
 
 [node name="Run" type="Node" parent="StateMachine"]
 script = ExtResource("6_4ir4y")
-
-[node name="Air" type="Node" parent="StateMachine"]
-script = ExtResource("7_d4pmg")
 
 [node name="Pepper" type="Node" parent="."]
 
