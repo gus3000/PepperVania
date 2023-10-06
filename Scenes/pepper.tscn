@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://c8ayyj7wew3j2"]
+[gd_scene load_steps=32 format=3 uid="uid://c8ayyj7wew3j2"]
 
-[ext_resource type="PackedScene" uid="uid://cgmfgn7omx6x7" path="res://Models/pepper.glb" id="1_7py1n"]
 [ext_resource type="Script" path="res://Src/pepper.gd" id="2_7c7ou"]
+[ext_resource type="PackedScene" uid="uid://xhivrciqbx8r" path="res://Models/Pepper/pepper.blend" id="2_iyfol"]
 [ext_resource type="Script" path="res://Src/State/state_machine.gd" id="4_jtwib"]
 [ext_resource type="Script" path="res://Src/State/Player/idle.gd" id="5_hnr86"]
 [ext_resource type="Script" path="res://Src/State/Player/run.gd" id="6_4ir4y"]
@@ -11,6 +11,43 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g7lo2"]
 radius = 0.178845
 height = 0.605305
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_en7qe"]
+animation = &"Close Eyes"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ojaak"]
+animation = &"Dash-end"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d3yjp"]
+animation = &"Dash-middle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4xm8x"]
+animation = &"Dash-start"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fdtyr"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q7los"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5w3wg"]
+advance_mode = 2
+advance_condition = &"end_dash"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6n1rl"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_iv7i6"]
+states/Dash-end/node = SubResource("AnimationNodeAnimation_ojaak")
+states/Dash-end/position = Vector2(736, 100)
+states/Dash-middle/node = SubResource("AnimationNodeAnimation_d3yjp")
+states/Dash-middle/position = Vector2(554, 100)
+states/Dash-start/node = SubResource("AnimationNodeAnimation_4xm8x")
+states/Dash-start/position = Vector2(367, 100)
+states/Start/position = Vector2(207, 100)
+transitions = ["Start", "Dash-start", SubResource("AnimationNodeStateMachineTransition_fdtyr"), "Dash-start", "Dash-middle", SubResource("AnimationNodeStateMachineTransition_q7los"), "Dash-middle", "Dash-end", SubResource("AnimationNodeStateMachineTransition_5w3wg"), "Dash-end", "End", SubResource("AnimationNodeStateMachineTransition_6n1rl")]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qer0d"]
 animation = &"Breathe"
@@ -26,7 +63,7 @@ animation = &"Walk"
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_cwh4r"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_qp6mh"]
-graph_offset = Vector2(-673, 23)
+graph_offset = Vector2(-459, 49)
 nodes/output/position = Vector2(400, 140)
 nodes/run/node = SubResource("AnimationNodeAnimation_r16ad")
 nodes/run/position = Vector2(-300, 280)
@@ -37,6 +74,9 @@ nodes/walk_run/position = Vector2(80, 140)
 nodes/walk_scale/node = SubResource("AnimationNodeTimeScale_cwh4r")
 nodes/walk_scale/position = Vector2(-140, 100)
 node_connections = [&"output", 0, &"walk_run", &"walk_run", 0, &"walk_scale", &"walk_run", 1, &"run", &"walk_scale", 0, &"walk"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1v6pi"]
+animation = &"Open Eyes"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ep85p"]
 advance_mode = 2
@@ -50,35 +90,60 @@ advance_condition = &"moving"
 advance_mode = 2
 advance_condition = &"idle"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vvw3b"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fmrar"]
+advance_mode = 2
+advance_condition = &"dash"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4lavd"]
+advance_mode = 2
+advance_condition = &"dash"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_87do6"]
-states/Breathe/node = SubResource("AnimationNodeAnimation_qer0d")
-states/Breathe/position = Vector2(342, 100)
+"states/Close Eyes/node" = SubResource("AnimationNodeAnimation_en7qe")
+"states/Close Eyes/position" = Vector2(74, 223)
+states/Dash/node = SubResource("AnimationNodeStateMachine_iv7i6")
+states/Dash/position = Vector2(409, 282)
+states/Idle/node = SubResource("AnimationNodeAnimation_qer0d")
+states/Idle/position = Vector2(342, 100)
 states/Move/node = SubResource("AnimationNodeBlendTree_qp6mh")
 states/Move/position = Vector2(517, 100)
-transitions = ["Start", "Breathe", SubResource("AnimationNodeStateMachineTransition_ep85p"), "Breathe", "Move", SubResource("AnimationNodeStateMachineTransition_hb5gy"), "Move", "Breathe", SubResource("AnimationNodeStateMachineTransition_6vyd4")]
-graph_offset = Vector2(-114, -94)
+"states/Open Eyes/node" = SubResource("AnimationNodeAnimation_1v6pi")
+"states/Open Eyes/position" = Vector2(74, 158)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ep85p"), "Idle", "Move", SubResource("AnimationNodeStateMachineTransition_hb5gy"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_6vyd4"), "Dash", "Idle", SubResource("AnimationNodeStateMachineTransition_vvw3b"), "Idle", "Dash", SubResource("AnimationNodeStateMachineTransition_fmrar"), "Move", "Dash", SubResource("AnimationNodeStateMachineTransition_4lavd")]
+graph_offset = Vector2(-351, 60)
 
 [node name="PepperCharacter" type="CharacterBody3D"]
 script = ExtResource("2_7c7ou")
 speed = 4.0
 rotation_speed = 5.0
 
-[node name="PepperModel" parent="." instance=ExtResource("1_7py1n")]
+[node name="PepperModel" parent="." instance=ExtResource("2_iyfol")]
 
 [node name="Skeleton3D" parent="PepperModel/PepperArmature" index="0"]
-bones/6/rotation = Quaternion(0.707107, -0.707107, 8.12028e-07, 8.12028e-07)
+bones/0/position = Vector3(-4.40058e-10, 0.253577, -0.231935)
+bones/0/scale = Vector3(1, 0.969349, 1.03065)
+bones/1/scale = Vector3(1, 1.03164, 0.97028)
+bones/6/rotation = Quaternion(0.707107, -0.707107, 8.12029e-07, 8.12029e-07)
 bones/7/rotation = Quaternion(0.707107, -0.707107, 7.27735e-07, 7.27735e-07)
-bones/8/rotation = Quaternion(0.707107, 0.707107, -8.12028e-07, 8.12028e-07)
+bones/8/rotation = Quaternion(0.707107, 0.707107, -8.12029e-07, 8.12029e-07)
 bones/9/rotation = Quaternion(0.707107, 0.707107, -7.27735e-07, 7.27735e-07)
 bones/14/rotation = Quaternion(0.707105, -1.30516e-06, -1.43524e-06, 0.707108)
-bones/15/rotation = Quaternion(0.887011, 2.11572e-07, -2.72491e-07, -0.461748)
-bones/16/rotation = Quaternion(0.173649, 1.4894e-09, -1.32648e-07, 0.984808)
-bones/17/rotation = Quaternion(0.216439, 2.15487e-09, -1.6453e-07, 0.976296)
-bones/19/rotation = Quaternion(0.707107, -4.90336e-07, -5.55385e-07, 0.707107)
-bones/19/scale = Vector3(1, 1, 1)
+bones/14/scale = Vector3(1, 0.97028, 1.03164)
+bones/15/rotation = Quaternion(0.910902, -1.47663e-07, -8.18464e-08, -0.412623)
+bones/15/scale = Vector3(1, 0.997349, 1.00552)
+bones/16/rotation = Quaternion(0.266785, 1.45756e-09, -2.03794e-07, 0.963756)
+bones/17/rotation = Quaternion(0.360949, 2.0584e-09, -2.74382e-07, 0.932586)
+bones/18/position = Vector3(6.19546e-08, -0.0944325, -0.414337)
+bones/18/scale = Vector3(1, 1.03164, 0.97028)
+bones/19/scale = Vector3(1, 0.97028, 1.03164)
 bones/20/rotation = Quaternion(0.707107, 1.2004e-06, 1.52561e-06, 0.707107)
-bones/20/scale = Vector3(1, 1, 1)
-bones/21/scale = Vector3(1, 1, 1)
+bones/20/scale = Vector3(1, 0.97028, 1.03164)
+bones/21/scale = Vector3(1, 0.97028, 1.03164)
+bones/22/scale = Vector3(1, 1.03164, 0.97028)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.177947, 0)
@@ -110,9 +175,11 @@ script = ExtResource("6_4ir4y")
 tree_root = SubResource("AnimationNodeStateMachine_87do6")
 anim_player = NodePath("../PepperModel/AnimationPlayer")
 active = true
+parameters/conditions/dash = false
 parameters/conditions/idle = false
 parameters/conditions/moving = false
-parameters/Move/walk_run/blend_amount = 0.25
+parameters/Dash/conditions/end_dash = false
+parameters/Move/walk_run/blend_amount = 0.36
 parameters/Move/walk_scale/scale = 0.5
 
 [connection signal="ready" from="." to="StateMachine" method="_on_pepper_character_ready"]

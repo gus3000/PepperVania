@@ -4,6 +4,8 @@ var timer:Timer
 
 func enter(_msg := {}) -> void:
 	print("enter dash")
+	animator["parameters/conditions/dash"] = true
+	animator["parameters/Dash/conditions/end_dash"] = false
 	timer = Timer.new()
 	timer.connect("timeout", finish_dash)
 	timer.wait_time = player.dash_distance / player.dash_speed
@@ -13,9 +15,12 @@ func enter(_msg := {}) -> void:
 
 func physics_update(delta):
 	player.velocity = player.basis.z * player.dash_speed
+	print("dash vertical speed : ", player.velocity.y)
 	player.move_and_slide()
 	
 
 func finish_dash():
 	state_machine.transition_to("Idle")
+	animator["parameters/conditions/dash"] = false
+	animator["parameters/Dash/conditions/end_dash"] = true
 

@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://li63m7etfg5m"]
+
+[ext_resource type="Texture2D" uid="uid://di877xmhealnt" path="res://Models/Pepper/pepper.png" id="1_st4k5"]
+
+[resource]
+albedo_texture = ExtResource("1_st4k5")
