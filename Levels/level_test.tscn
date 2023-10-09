@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://8qb4q6efysan"]
+
+[ext_resource type="PackedScene" uid="uid://tl4d8nk7q0nm" path="res://Levels/level_test.blend" id="1_igl2w"]
+
+[node name="level_test" instance=ExtResource("1_igl2w")]

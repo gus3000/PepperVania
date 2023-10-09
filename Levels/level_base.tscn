@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dux72qukuqywb"]
+
+[ext_resource type="PackedScene" uid="uid://c8ayyj7wew3j2" path="res://Prefab/pepper.tscn" id="1_3o8xi"]
+[ext_resource type="Script" path="res://Src/iso_follow.gd" id="2_p3wqt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_job0q"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_kn3rb"]
+sky_material = SubResource("ProceduralSkyMaterial_job0q")
+
+[sub_resource type="Environment" id="Environment_m3pu7"]
+background_mode = 2
+sky = SubResource("Sky_kn3rb")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Level" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 3.81739, 13.2238, -6.61186)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_m3pu7")
+
+[node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_3o8xi")]
+camera = NodePath("../Camera3D")
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("point_to_follow")]
+transform = Transform3D(-0.707107, 0.353553, -0.612373, 0, 0.866026, 0.5, 0.707107, 0.353553, -0.612373, -13.9914, 11.3932, -13.5198)
+fov = 15.0
+size = 5.0
+far = 50.0
+script = ExtResource("2_p3wqt")
+point_to_follow = NodePath("../Player/LookAtTarget")
+dead_zone = 0.3
