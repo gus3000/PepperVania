@@ -28,11 +28,9 @@ func load_prefabs():
 func replace_prefab_rec(node):
 	if node == null:
 		return
-	print(node.name)
 	var res: RegExMatch = regex.search(node.name)
 	if res:
 		var prefab_name = res.get_string("prefab_name")
-		print(node, " -> ", prefab_name)
 		assert(
 			prefab_name in prefabs,
 			(
@@ -42,7 +40,6 @@ func replace_prefab_rec(node):
 		)
 
 		var pref = prefabs[prefab_name].instantiate()
-		print("replaced by : ", pref)
 		node.add_child(pref)
 		pref.set_owner(root_node)
 		return

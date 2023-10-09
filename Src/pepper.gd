@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 @export var point_to_follow: Node3D
 
+
 @export var speed: float = 5
 @export var rotation_speed: float = 10
 @export var gravity: float = 10

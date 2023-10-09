@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dux72qukuqywb"]
+[gd_scene load_steps=7 format=3 uid="uid://dux72qukuqywb"]
 
 [ext_resource type="PackedScene" uid="uid://c8ayyj7wew3j2" path="res://Prefab/pepper.tscn" id="1_3o8xi"]
 [ext_resource type="Script" path="res://Src/iso_follow.gd" id="2_p3wqt"]
+[ext_resource type="PackedScene" uid="uid://dau8fcmtoviuv" path="res://Prefab/ui.tscn" id="3_gkvds"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_job0q"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -38,3 +39,5 @@ script = ExtResource("2_p3wqt")
 point_to_follow = NodePath("../Player/LookAtTarget")
 follow_speed = 3
 dead_zone = 0.3
+
+[node name="UI" parent="." instance=ExtResource("3_gkvds")]
