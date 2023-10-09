@@ -36,4 +36,5 @@ size = 5.0
 far = 50.0
 script = ExtResource("2_p3wqt")
 point_to_follow = NodePath("../Player/LookAtTarget")
+follow_speed = 3
 dead_zone = 0.3

@@ -13,7 +13,8 @@ config_version=5
 config/name="Peppervania3D"
 run/main_scene="res://Levels/level_test.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Renders/pepper.png"
+config/windows_native_icon="res://Renders/pepper.ico"
 
 [editor]
 
@@ -21,7 +22,7 @@ movie_writer/movie_file="C:/Users/gus3000/GodotProjects/Peppervania3D/Build/Vide
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/cyclops_level_builder/plugin.cfg")
+enabled=PackedStringArray()
 
 [filesystem]
 
