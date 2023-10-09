@@ -1,10 +1,8 @@
 extends PlayerState
 
 
-func enter(msg := {}) -> void:
+func enter(_msg := {}) -> void:
 	print("enter air")
-	if msg.has("do_jump"):
-		player.velocity.y = player.jump_impulse
 
 
 func physics_update(delta: float) -> void:

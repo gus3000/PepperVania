@@ -47,10 +47,7 @@ func default_transitions(allowed: Array[String]) -> void:
 	if "Dash" in allowed and Input.is_action_just_pressed("dash"):
 		return state_machine.transition_to("Dash")
 
-	if "Air" in allowed:
-		if Input.is_action_just_pressed("jump"):
-			return state_machine.transition_to("Air", {do_jump = true})
-		elif not player.is_on_floor():
+	if "Air" in allowed and not player.is_on_floor():
 			return state_machine.transition_to("Air")
 
 	if "Run" in allowed and player.is_on_floor() and not input_vector_raw.is_zero_approx():

@@ -22,10 +22,6 @@ func physics_update(delta: float) -> void:
 		animator["parameters/Move/walk_scale/scale"] = 1
 
 	default_transitions(["Air", "Dash", "Idle"])
-	# if Input.is_action_just_pressed("jump"):
-	# 	state_machine.transition_to("Air", {do_jump=true})
-	# elif is_input_zero():
-	# 	state_machine.transition_to("Idle")
 
 
 func exit() -> void:
