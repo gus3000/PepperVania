@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhrigys1lvmnt"]
+
+[ext_resource type="PackedScene" uid="uid://dn5koaw0cf65s" path="res://Prefab/Interactable/interactable.tscn" id="1_fmvob"]
+[ext_resource type="Script" path="res://Src/Interactable/chest.gd" id="2_0nha7"]
+[ext_resource type="PackedScene" uid="uid://bgwph8xwyvv42" path="res://Models/Interactable/chest.blend" id="2_t1afg"]
+
+[node name="Chest" instance=ExtResource("1_fmvob")]
+script = ExtResource("2_0nha7")
+loot = ""
+
+[node name="chest" parent="." index="1" instance=ExtResource("2_t1afg")]
+
+[node name="Skeleton3D" parent="chest/ChestArmature" index="0"]
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+
+[editable path="chest"]
