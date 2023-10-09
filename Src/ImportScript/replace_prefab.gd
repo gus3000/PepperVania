@@ -43,7 +43,6 @@ func replace_prefab_rec(node):
 
 		var pref = prefabs[prefab_name].instantiate()
 		print("replaced by : ", pref)
-		node.name = "test lol"
 		node.add_child(pref)
 		pref.set_owner(root_node)
 		return

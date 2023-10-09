@@ -59,3 +59,11 @@ func default_transitions(allowed: Array[String]) -> void:
 
 func is_input_zero() -> bool:
 	return input_vector_raw.is_equal_approx(Vector2.ZERO)
+
+func default_interact():
+	if player.interact_target == null:
+		return
+	
+	if Input.is_action_just_pressed("interact"):
+		print("interact")
+		player.interact_target.interact(player)

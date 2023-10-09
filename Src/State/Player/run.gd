@@ -21,6 +21,7 @@ func physics_update(delta: float) -> void:
 	else:
 		animator["parameters/Move/walk_scale/scale"] = 1
 
+	default_interact()
 	default_transitions(["Air", "Dash", "Idle"])
 
 

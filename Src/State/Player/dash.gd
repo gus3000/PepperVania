@@ -1,6 +1,7 @@
 extends PlayerState
 
-var timer:Timer
+var timer: Timer
+
 
 func enter(_msg := {}) -> void:
 	print("enter dash")
@@ -13,14 +14,13 @@ func enter(_msg := {}) -> void:
 	add_child(timer)
 	timer.start()
 
-func physics_update(delta):
+
+func physics_update(_delta):
 	player.velocity = player.basis.z * player.dash_speed
-	print("dash vertical speed : ", player.velocity.y)
 	player.move_and_slide()
-	
+
 
 func finish_dash():
 	state_machine.transition_to("Idle")
 	animator["parameters/conditions/dash"] = false
 	animator["parameters/Dash/conditions/end_dash"] = true
-

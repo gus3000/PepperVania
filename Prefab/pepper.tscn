@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c8ayyj7wew3j2"]
+[gd_scene load_steps=33 format=3 uid="uid://c8ayyj7wew3j2"]
 
 [ext_resource type="Script" path="res://Src/pepper.gd" id="2_7c7ou"]
 [ext_resource type="PackedScene" uid="uid://xhivrciqbx8r" path="res://Models/Pepper/pepper.blend" id="2_iyfol"]
@@ -11,6 +11,8 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g7lo2"]
 radius = 0.178845
 height = 0.605305
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ulylx"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_en7qe"]
 animation = &"Close Eyes"
@@ -116,8 +118,9 @@ states/Move/position = Vector2(517, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ep85p"), "Idle", "Move", SubResource("AnimationNodeStateMachineTransition_hb5gy"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_6vyd4"), "Dash", "Idle", SubResource("AnimationNodeStateMachineTransition_vvw3b"), "Idle", "Dash", SubResource("AnimationNodeStateMachineTransition_fmrar"), "Move", "Dash", SubResource("AnimationNodeStateMachineTransition_4lavd")]
 graph_offset = Vector2(-351, 60)
 
-[node name="PepperCharacter" type="CharacterBody3D"]
+[node name="PepperCharacter" type="CharacterBody3D" node_paths=PackedStringArray("point_to_follow")]
 script = ExtResource("2_7c7ou")
+point_to_follow = NodePath("LookAtTarget")
 speed = 4.0
 rotation_speed = 5.0
 
@@ -141,6 +144,12 @@ bones/21/scale = Vector3(1, 1, 1)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.177947, 0)
 shape = SubResource("CapsuleShape3D_g7lo2")
+
+[node name="Trigger" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.299321, 0.213356)
+shape = SubResource("SphereShape3D_ulylx")
 
 [node name="LookAtTarget" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.320783, 0.682144)

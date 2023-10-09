@@ -1,5 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://8qb4q6efysan"]
+[gd_scene load_steps=3 format=3 uid="uid://cj2wga8l724cd"]
 
 [ext_resource type="PackedScene" uid="uid://tl4d8nk7q0nm" path="res://Levels/level_test.blend" id="1_igl2w"]
+[ext_resource type="PackedScene" uid="uid://dux72qukuqywb" path="res://Levels/level_base.tscn" id="1_q5jug"]
 
-[node name="level_test" instance=ExtResource("1_igl2w")]
+[node name="Level" instance=ExtResource("1_q5jug")]
+
+[node name="level_test" parent="." index="5" instance=ExtResource("1_igl2w")]
+
+[editable path="level_test"]
