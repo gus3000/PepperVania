@@ -1,12 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dau8fcmtoviuv"]
+[gd_scene load_steps=3 format=3 uid="uid://dau8fcmtoviuv"]
 
 [ext_resource type="Script" path="res://Src/UI/ui.gd" id="1_chrks"]
-[ext_resource type="PackedScene" uid="uid://bcqaesk0bccfj" path="res://Prefab/UI/hint.tscn" id="1_ertbd"]
-[ext_resource type="PackedScene" uid="uid://qf0ebsmmhcfc" path="res://Prefab/UI/hint_joystick.tscn" id="2_o6g7t"]
+[ext_resource type="PackedScene" uid="uid://bebwui3ke7gfe" path="res://Prefab/UI/ui_controller.tscn" id="2_e58qj"]
 
-[node name="UI" type="Node" node_paths=PackedStringArray("movement_joy")]
+[node name="UI" type="Node" node_paths=PackedStringArray("ui_controller")]
 script = ExtResource("1_chrks")
-movement_joy = NodePath("CanvasLayer/HBoxContainer/hint_joystick")
+ui_controller = NodePath("CanvasLayer/ui_controller")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -22,9 +21,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="hint" parent="CanvasLayer/HBoxContainer" instance=ExtResource("1_ertbd")]
-visible = false
-layout_mode = 2
-
-[node name="hint_joystick" parent="CanvasLayer/HBoxContainer" instance=ExtResource("2_o6g7t")]
-layout_mode = 2
+[node name="ui_controller" parent="CanvasLayer" instance=ExtResource("2_e58qj")]
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(200, -150)

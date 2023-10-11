@@ -41,3 +41,6 @@ follow_speed = 3
 dead_zone = 0.3
 
 [node name="UI" parent="." instance=ExtResource("3_gkvds")]
+
+[editable path="UI"]
+[editable path="UI/CanvasLayer/ui_controller"]
