@@ -1,0 +1,163 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="331pt" height="269pt" viewBox="0.00 0.00 330.85 269.06">
+<g id="graph0" class="graph" transform="translate(4,265.05999755859375) scale(1)" data-name="player_state">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-265.06 326.85,-265.06 326.85,4 -4,4"/>
+<!-- air -->
+<g id="node1" class="node" pointer-events="visible" data-name="air">
+
+<ellipse fill="none" stroke="black" cx="234.32" cy="-243.06" rx="27" ry="18"/>
+<text text-anchor="middle" x="234.32" y="-238.86" font-family="Times,serif" font-size="14.00">air</text>
+</g>
+<!-- idle -->
+<g id="node3" class="node" pointer-events="visible" data-name="idle">
+
+<ellipse fill="none" stroke="black" cx="131.71" cy="-215.9" rx="27" ry="18"/>
+<text text-anchor="middle" x="131.71" y="-211.7" font-family="Times,serif" font-size="14.00">idle</text>
+</g>
+<!-- air&#45;&gt;idle -->
+<g id="edge1" class="edge" data-name="air-&gt;idle">
+
+<path fill="none" stroke="black" d="M208.96,-236.35C196.63,-233.08 181.58,-229.1 168.05,-225.52"/>
+<polygon fill="black" stroke="black" points="169.17,-222.19 158.6,-223.02 167.37,-228.96 169.17,-222.19"/>
+</g>
+<!-- dash -->
+<g id="node2" class="node" pointer-events="visible" data-name="dash">
+
+<ellipse fill="none" stroke="black" cx="294.11" cy="-199.06" rx="28.98" ry="18"/>
+<text text-anchor="middle" x="294.11" y="-194.86" font-family="Times,serif" font-size="14.00">dash</text>
+</g>
+<!-- dash&#45;&gt;idle -->
+<g id="edge2" class="edge" data-name="dash-&gt;idle">
+
+<path fill="none" stroke="black" d="M265.08,-202.07C238.62,-204.81 199.34,-208.89 170.25,-211.9"/>
+<polygon fill="black" stroke="black" points="169.97,-208.41 160.38,-212.92 170.69,-215.37 169.97,-208.41"/>
+</g>
+<!-- idle&#45;&gt;air -->
+<g id="edge3" class="edge" data-name="idle-&gt;air">
+
+<path fill="none" stroke="black" d="M157.08,-222.61C169.41,-225.88 184.46,-229.86 197.98,-233.44"/>
+<polygon fill="black" stroke="black" points="196.87,-236.77 207.43,-235.94 198.66,-230 196.87,-236.77"/>
+</g>
+<!-- idle&#45;&gt;dash -->
+<g id="edge4" class="edge" data-name="idle-&gt;dash">
+
+<path fill="none" stroke="black" d="M158.53,-213.12C184.46,-210.43 224.07,-206.32 253.8,-203.24"/>
+<polygon fill="black" stroke="black" points="253.97,-206.74 263.55,-202.23 253.25,-199.78 253.97,-206.74"/>
+</g>
+<!-- walk -->
+<g id="node4" class="node" pointer-events="visible" data-name="walk">
+
+<ellipse fill="none" stroke="black" cx="203.77" cy="-131.63" rx="29.62" ry="18"/>
+<text text-anchor="middle" x="203.77" y="-127.43" font-family="Times,serif" font-size="14.00">walk</text>
+</g>
+<!-- idle&#45;&gt;walk -->
+<g id="edge5" class="edge" data-name="idle-&gt;walk">
+
+<path fill="none" stroke="black" d="M145.27,-200.05C155.7,-187.84 170.32,-170.75 182.34,-156.69"/>
+<polygon fill="black" stroke="black" points="184.96,-159.01 188.8,-149.13 179.64,-154.46 184.96,-159.01"/>
+</g>
+<!-- crouch_idle -->
+<g id="node6" class="node" pointer-events="visible" data-name="crouch_idle">
+
+<ellipse fill="none" stroke="black" cx="56.62" cy="-97.76" rx="56.74" ry="18"/>
+<text text-anchor="middle" x="56.62" y="-93.56" font-family="Times,serif" font-size="14.00">crouch_idle</text>
+</g>
+<!-- idle&#45;&gt;crouch_idle -->
+<g id="edge6" class="edge" data-name="idle-&gt;crouch_idle">
+
+<path fill="none" stroke="black" d="M120.95,-198.97C108.73,-179.74 88.6,-148.08 74.12,-125.29"/>
+<polygon fill="black" stroke="black" points="77.23,-123.66 68.91,-117.1 71.32,-127.41 77.23,-123.66"/>
+</g>
+<!-- walk&#45;&gt;air -->
+<g id="edge7" class="edge" data-name="walk-&gt;air">
+
+<path fill="none" stroke="black" d="M208.68,-149.53C213.47,-167 220.83,-193.85 226.44,-214.3"/>
+<polygon fill="black" stroke="black" points="223.01,-215.02 229.03,-223.74 229.76,-213.17 223.01,-215.02"/>
+</g>
+<!-- walk&#45;&gt;dash -->
+<g id="edge8" class="edge" data-name="walk-&gt;dash">
+
+<path fill="none" stroke="black" d="M222.49,-145.6C235.21,-155.09 252.25,-167.81 266.51,-178.46"/>
+<polygon fill="black" stroke="black" points="264.1,-181.03 274.2,-184.2 268.28,-175.42 264.1,-181.03"/>
+</g>
+<!-- walk&#45;&gt;idle -->
+<g id="edge9" class="edge" data-name="walk-&gt;idle">
+
+<path fill="none" stroke="black" d="M189.88,-147.88C179.34,-160.2 164.69,-177.33 152.72,-191.33"/>
+<polygon fill="black" stroke="black" points="150.14,-188.96 146.3,-198.83 155.46,-193.51 150.14,-188.96"/>
+</g>
+<!-- run -->
+<g id="node5" class="node" pointer-events="visible" data-name="run">
+
+<ellipse fill="none" stroke="black" cx="291.16" cy="-89.79" rx="27" ry="18"/>
+<text text-anchor="middle" x="291.16" y="-85.59" font-family="Times,serif" font-size="14.00">run</text>
+</g>
+<!-- walk&#45;&gt;run -->
+<g id="edge10" class="edge" data-name="walk-&gt;run">
+
+<path fill="none" stroke="black" d="M227.19,-120.42C236.9,-115.77 248.32,-110.3 258.81,-105.28"/>
+<polygon fill="black" stroke="black" points="260.01,-108.58 267.52,-101.11 256.99,-102.27 260.01,-108.58"/>
+</g>
+<!-- crouch_walk -->
+<g id="node7" class="node" pointer-events="visible" data-name="crouch_walk">
+
+<ellipse fill="none" stroke="black" cx="169.72" cy="-18" rx="60.82" ry="18"/>
+<text text-anchor="middle" x="169.72" y="-13.8" font-family="Times,serif" font-size="14.00">crouch_walk</text>
+</g>
+<!-- walk&#45;&gt;crouch_walk -->
+<g id="edge11" class="edge" data-name="walk-&gt;crouch_walk">
+
+<path fill="none" stroke="black" d="M198.38,-113.62C193.03,-95.78 184.75,-68.14 178.46,-47.16"/>
+<polygon fill="black" stroke="black" points="181.86,-46.32 175.64,-37.75 175.16,-48.33 181.86,-46.32"/>
+</g>
+<!-- run&#45;&gt;air -->
+<g id="edge12" class="edge" data-name="run-&gt;air">
+
+<path fill="none" stroke="black" d="M284.53,-107.67C274.78,-133.98 256.46,-183.36 244.86,-214.66"/>
+<polygon fill="black" stroke="black" points="241.63,-213.28 241.44,-223.87 248.2,-215.72 241.63,-213.28"/>
+</g>
+<!-- run&#45;&gt;dash -->
+<g id="edge13" class="edge" data-name="run-&gt;dash">
+
+<path fill="none" stroke="black" d="M291.65,-107.83C292.1,-124.5 292.77,-149.57 293.3,-169.22"/>
+<polygon fill="black" stroke="black" points="289.8,-169.21 293.57,-179.11 296.8,-169.02 289.8,-169.21"/>
+</g>
+<!-- run&#45;&gt;walk -->
+<g id="edge14" class="edge" data-name="run-&gt;walk">
+
+<path fill="none" stroke="black" d="M269.11,-100.35C259.55,-104.92 248.15,-110.38 237.56,-115.45"/>
+<polygon fill="black" stroke="black" points="236.22,-112.21 228.71,-119.69 239.24,-118.53 236.22,-112.21"/>
+</g>
+<!-- run&#45;&gt;crouch_walk -->
+<g id="edge15" class="edge" data-name="run-&gt;crouch_walk">
+
+<path fill="none" stroke="black" d="M270.56,-77.61C253.23,-67.37 228.01,-52.46 207.13,-40.11"/>
+<polygon fill="black" stroke="black" points="208.97,-37.14 198.58,-35.06 205.41,-43.16 208.97,-37.14"/>
+</g>
+<!-- crouch_idle&#45;&gt;idle -->
+<g id="edge16" class="edge" data-name="crouch_idle-&gt;idle">
+
+<path fill="none" stroke="black" d="M68.02,-115.71C80.48,-135.3 100.55,-166.87 114.83,-189.33"/>
+<polygon fill="black" stroke="black" points="111.8,-191.1 120.12,-197.66 117.71,-187.34 111.8,-191.1"/>
+</g>
+<!-- crouch_idle&#45;&gt;crouch_walk -->
+<g id="edge17" class="edge" data-name="crouch_idle-&gt;crouch_walk">
+
+<path fill="none" stroke="black" d="M80.33,-81.04C96.66,-69.53 118.58,-54.07 136.62,-41.34"/>
+<polygon fill="black" stroke="black" points="138.26,-44.47 144.42,-35.85 134.23,-38.75 138.26,-44.47"/>
+</g>
+<!-- crouch_walk&#45;&gt;walk -->
+<g id="edge18" class="edge" data-name="crouch_walk-&gt;walk">
+
+<path fill="none" stroke="black" d="M175.19,-36.26C180.59,-54.25 188.91,-82.02 195.18,-102.97"/>
+<polygon fill="black" stroke="black" points="191.77,-103.77 197.99,-112.34 198.47,-101.76 191.77,-103.77"/>
+</g>
+<!-- crouch_walk&#45;&gt;crouch_idle -->
+<g id="edge19" class="edge" data-name="crouch_walk-&gt;crouch_idle">
+
+<path fill="none" stroke="black" d="M145.74,-34.92C129.28,-46.52 107.25,-62.06 89.2,-74.79"/>
+<polygon fill="black" stroke="black" points="87.58,-71.65 81.42,-80.27 91.61,-77.37 87.58,-71.65"/>
+</g>
+</g>
+</svg>

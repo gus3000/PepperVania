@@ -2,19 +2,19 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="31.46768mm"
-   height="31.46768mm"
-   viewBox="0 0 31.46768 31.46768"
+   width="11.641538mm"
+   height="11.641538mm"
+   viewBox="0 0 11.641538 11.641538"
    version="1.1"
-   id="svg6712"
+   id="svg4021"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
-   sodipodi:docname="joystick.svg"
+   sodipodi:docname="controller_button_inactive.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="namedview6714"
+     id="namedview4023"
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="2.587745"
-     inkscape:cx="33.813223"
-     inkscape:cy="93.517715"
+     inkscape:zoom="0.914906"
+     inkscape:cx="-302.21684"
+     inkscape:cy="163.95127"
      inkscape:window-width="2560"
      inkscape:window-height="1377"
      inkscape:window-x="2552"
@@ -34,17 +34,17 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
-     id="defs6709" />
+     id="defs4018" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-13.185342,-25.042206)">
+     transform="translate(-160.17534,-81.804353)">
     <circle
-       style="fill:#a6a6a6;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill-opacity:1;stroke-dasharray:none"
-       id="path6812"
-       cx="29.090891"
-       cy="40.658566"
-       r="12" />
+       cx="165.99611"
+       cy="87.625122"
+       r="5.8207688"
+       id="circle28"
+       style="stroke-width:0.291038" />
   </g>
 </svg>
