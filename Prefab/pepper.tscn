@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c8ayyj7wew3j2"]
+[gd_scene load_steps=34 format=3 uid="uid://c8ayyj7wew3j2"]
 
 [ext_resource type="Script" path="res://Src/pepper.gd" id="2_7c7ou"]
 [ext_resource type="PackedScene" uid="uid://xhivrciqbx8r" path="res://Models/Pepper/pepper.blend" id="2_iyfol"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Src/State/Player/run.gd" id="6_4ir4y"]
 [ext_resource type="Script" path="res://Src/State/Player/dash.gd" id="7_1ojuo"]
 [ext_resource type="Script" path="res://Src/State/Player/air.gd" id="7_d4pmg"]
+[ext_resource type="Script" path="res://Src/State/Player/player_state.gd" id="8_20vf1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g7lo2"]
 radius = 0.178845
@@ -170,6 +171,12 @@ script = ExtResource("5_hnr86")
 
 [node name="Run" type="Node" parent="StateMachine"]
 script = ExtResource("6_4ir4y")
+
+[node name="Crouch" type="Node" parent="StateMachine"]
+script = ExtResource("8_20vf1")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("8_20vf1")
 
 [node name="Pepper" type="Node" parent="."]
 

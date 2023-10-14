@@ -8,3 +8,5 @@
 [node name="level_test" parent="." index="5" instance=ExtResource("1_igl2w")]
 
 [editable path="level_test"]
+[editable path="UI"]
+[editable path="UI/CanvasLayer/ui_controller"]

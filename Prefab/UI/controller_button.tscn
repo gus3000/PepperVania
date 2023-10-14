@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqsq4kk850lyl"]
+
+[ext_resource type="Script" path="res://Src/UI/controller_button.gd" id="1_dlbij"]
+[ext_resource type="Texture2D" uid="uid://dmml8y2nfqk86" path="res://Vector/UI/controller_button_active.svg" id="2_8npp0"]
+[ext_resource type="Texture2D" uid="uid://ba4vatpiqr6a3" path="res://Vector/UI/controller_button_inactive.svg" id="3_kv4ky"]
+
+[node name="ControllerButton" type="Control" node_paths=PackedStringArray("active", "inactive")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dlbij")
+active = NodePath("Active")
+inactive = NodePath("Inactive")
+
+[node name="Active" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 44.0
+offset_bottom = 44.0
+texture = ExtResource("2_8npp0")
+
+[node name="Inactive" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_kv4ky")
