@@ -22,7 +22,10 @@ func _post_import(scene):
 
 
 func load_prefabs():
-	prefabs = {"chest": load("res://Prefab/Interactable/chest.tscn")}
+	prefabs = {
+		"chest": load("res://Prefab/Interactable/chest.tscn"),
+		"checkpoint": load("res://Prefab/Interactable/checkpoint.tscn")
+	}
 
 
 func replace_prefab_rec(node):

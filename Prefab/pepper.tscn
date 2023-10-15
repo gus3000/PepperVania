@@ -16,7 +16,7 @@ height = 0.605305
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ulylx"]
 
-[sub_resource type="Animation" id="Animation_lqtw0"]
+[sub_resource type="Animation" id="Animation_hj0j2"]
 resource_name = "Breathe"
 loop_mode = 1
 tracks/0/type = "position_3d"
@@ -265,7 +265,7 @@ tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = PackedFloat32Array(0, 1, 0.707107, 0.707107, -7.27735e-07, 7.27735e-07)
 
-[sub_resource type="Animation" id="Animation_uw2tr"]
+[sub_resource type="Animation" id="Animation_yltkg"]
 resource_name = "Close Eyes"
 length = 0.0833333
 tracks/0/type = "position_3d"
@@ -514,7 +514,7 @@ tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = PackedFloat32Array(0, 1, 0.707107, 0.707107, -7.27735e-07, 7.27735e-07)
 
-[sub_resource type="Animation" id="Animation_8mvnk"]
+[sub_resource type="Animation" id="Animation_ncfwm"]
 resource_name = "Crouch-begin"
 length = 0.25
 tracks/0/type = "position_3d"
@@ -763,7 +763,7 @@ tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = PackedFloat32Array(0, 1, 1, 1, 1)
 
-[sub_resource type="Animation" id="Animation_3a2aa"]
+[sub_resource type="Animation" id="Animation_rg343"]
 resource_name = "Crouch-end"
 length = 0.25
 tracks/0/type = "position_3d"
@@ -912,7 +912,7 @@ tracks/20/enabled = true
 tracks/20/path = NodePath("PepperArmature/Skeleton3D:Tail Tip")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
-tracks/20/keys = PackedFloat32Array(0, 1, 0.274848, 2.12203e-09, -2.0893e-07, 0.961488, 0.0333333, 1, 0.326627, 2.086e-09, -2.48291e-07, 0.945153, 0.0666667, 1, 0.188839, 2.16733e-09, -1.43549e-07, 0.982008, 0.1, 1, -0.00208729, 2.20703e-09, 1.58667e-09, 0.999998, 0.166667, 1, -0.00208485, 2.20705e-09, 1.58479e-09, 0.999998, 0.2, 1, 0.268515, 2.12599e-09, -2.04116e-07, 0.963276, 0.233333, 1, 0.387319, 2.03478e-09, -2.94427e-07, 0.921946, 0.25, 1, 0.395277, 2.02732e-09, -3.00477e-07, 0.918562)
+tracks/20/keys = PackedFloat32Array(0, 1, 0.274848, 2.12203e-09, -2.0893e-07, 0.961488, 0.0333333, 1, 0.326627, 2.086e-09, -2.48291e-07, 0.945153, 0.0666667, 1, 0.188839, 2.16732e-09, -1.43549e-07, 0.982008, 0.1, 1, -0.00208729, 2.20703e-09, 1.58667e-09, 0.999998, 0.166667, 1, -0.00208485, 2.20705e-09, 1.58479e-09, 0.999998, 0.2, 1, 0.268515, 2.12599e-09, -2.04116e-07, 0.963276, 0.233333, 1, 0.387319, 2.03478e-09, -2.94427e-07, 0.921946, 0.25, 1, 0.395277, 2.02732e-09, -3.00477e-07, 0.918562)
 tracks/21/type = "position_3d"
 tracks/21/imported = true
 tracks/21/enabled = true
@@ -1012,7 +1012,7 @@ tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = PackedFloat32Array(0, 1, 1, 1, 1)
 
-[sub_resource type="Animation" id="Animation_f1awe"]
+[sub_resource type="Animation" id="Animation_4sgjd"]
 resource_name = "Dash-end"
 length = 0.0833333
 tracks/0/type = "position_3d"
@@ -1261,7 +1261,7 @@ tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = PackedFloat32Array(0, 1, 1.37679e-07, -0.707108, -0.707105, 1.37679e-07)
 
-[sub_resource type="Animation" id="Animation_lfkmo"]
+[sub_resource type="Animation" id="Animation_ikgpj"]
 resource_name = "Dash-middle"
 length = 0.833333
 loop_mode = 1
@@ -1511,7 +1511,7 @@ tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = PackedFloat32Array(0, 1, 0.707107, 0.707107, -7.27735e-07, 7.27735e-07)
 
-[sub_resource type="Animation" id="Animation_kpd6e"]
+[sub_resource type="Animation" id="Animation_1o52f"]
 resource_name = "Dash-start"
 length = 0.0833333
 tracks/0/type = "position_3d"
@@ -1760,7 +1760,7 @@ tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = PackedFloat32Array(0, 1, 1.37679e-07, -0.707108, -0.707105, 1.37679e-07)
 
-[sub_resource type="Animation" id="Animation_6p20p"]
+[sub_resource type="Animation" id="Animation_0obob"]
 resource_name = "Open Eyes"
 length = 0.0833333
 tracks/0/type = "position_3d"
@@ -2009,9 +2009,9 @@ tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = PackedFloat32Array(0, 1, 0.707107, 0.707107, -7.27735e-07, 7.27735e-07)
 
-[sub_resource type="Animation" id="Animation_8e52t"]
+[sub_resource type="Animation" id="Animation_nekyy"]
 resource_name = "RestPose"
-length = 0.0166667
+length = 0.001
 tracks/0/type = "rotation_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -2258,7 +2258,7 @@ tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = PackedFloat32Array(0, 1, 1.37679e-07, -0.707108, -0.707105, 1.37679e-07)
 
-[sub_resource type="Animation" id="Animation_exc6j"]
+[sub_resource type="Animation" id="Animation_kissp"]
 resource_name = "Run"
 length = 0.4
 loop_mode = 1
@@ -2331,14 +2331,14 @@ tracks/9/enabled = true
 tracks/9/path = NodePath("PepperArmature/Skeleton3D:Tail Mid")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/keys = PackedFloat32Array(0, 1, 0.350703, 1.41629e-09, -2.67898e-07, 0.936487, 0.0333333, 1, 0.376518, 1.40098e-09, -2.87617e-07, 0.926409, 0.0666667, 1, 0.408176, 1.3806e-09, -3.118e-07, 0.912903, 0.1, 1, 0.421196, 1.37162e-09, -3.21747e-07, 0.906969, 0.166667, 1, 0.42193, 1.37111e-09, -3.22307e-07, 0.906628, 0.2, 1, 0.434232, 1.36228e-09, -3.31704e-07, 0.900801, 0.233333, 1, 0.37982, 1.399e-09, -2.90139e-07, 0.925061, 0.266667, 1, 0.316166, 1.4348e-09, -2.41515e-07, 0.948704, 0.3, 1, 0.292023, 1.44645e-09, -2.23073e-07, 0.956411, 0.333333, 1, 0.276039, 1.4536e-09, -2.10863e-07, 0.961146, 0.366667, 1, 0.260166, 1.4603e-09, -1.98738e-07, 0.965564, 0.4, 1, 0.350703, 1.41629e-09, -2.67898e-07, 0.936487)
+tracks/9/keys = PackedFloat32Array(0, 1, 0.350703, 1.41629e-09, -2.67898e-07, 0.936487, 0.0333333, 1, 0.376518, 1.40098e-09, -2.87617e-07, 0.926409, 0.0666667, 1, 0.408176, 1.3806e-09, -3.118e-07, 0.912903, 0.1, 1, 0.421196, 1.37162e-09, -3.21747e-07, 0.906969, 0.166667, 1, 0.42193, 1.37113e-09, -3.22307e-07, 0.906628, 0.2, 1, 0.434232, 1.36228e-09, -3.31704e-07, 0.900801, 0.233333, 1, 0.37982, 1.399e-09, -2.90139e-07, 0.925061, 0.266667, 1, 0.316166, 1.4348e-09, -2.41515e-07, 0.948704, 0.3, 1, 0.292023, 1.44645e-09, -2.23073e-07, 0.956411, 0.333333, 1, 0.276039, 1.4536e-09, -2.10863e-07, 0.961146, 0.366667, 1, 0.260166, 1.4603e-09, -1.98738e-07, 0.965564, 0.4, 1, 0.350703, 1.41629e-09, -2.67898e-07, 0.936487)
 tracks/10/type = "rotation_3d"
 tracks/10/imported = true
 tracks/10/enabled = true
 tracks/10/path = NodePath("PepperArmature/Skeleton3D:Tail Tip")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/keys = PackedFloat32Array(0, 1, 0.492716, 1.92067e-09, -3.74547e-07, 0.87019, 0.0333333, 1, 0.532693, 1.86791e-09, -4.04936e-07, 0.846308, 0.0666667, 1, 0.58166, 1.79536e-09, -4.42159e-07, 0.813432, 0.1, 1, 0.601433, 1.76331e-09, -4.5719e-07, 0.798923, 0.133333, 1, 0.601243, 1.76364e-09, -4.57046e-07, 0.799066, 0.166667, 1, 0.602536, 1.7615e-09, -4.58029e-07, 0.798091, 0.2, 1, 0.620837, 1.73023e-09, -4.7194e-07, 0.78394, 0.233333, 1, 0.537732, 1.86089e-09, -4.08766e-07, 0.843116, 0.266667, 1, 0.438495, 1.98371e-09, -3.3333e-07, 0.898734, 0.3, 1, 0.40058, 2.02239e-09, -3.04508e-07, 0.916262, 0.333333, 1, 0.375376, 2.0458e-09, -2.85349e-07, 0.926873, 0.366667, 1, 0.350592, 2.06711e-09, -2.66509e-07, 0.936528, 0.4, 1, 0.492716, 1.92067e-09, -3.74547e-07, 0.87019)
+tracks/10/keys = PackedFloat32Array(0, 1, 0.492716, 1.92068e-09, -3.74547e-07, 0.87019, 0.0333333, 1, 0.532693, 1.86791e-09, -4.04936e-07, 0.846308, 0.0666667, 1, 0.58166, 1.79536e-09, -4.42159e-07, 0.813432, 0.1, 1, 0.601433, 1.76331e-09, -4.5719e-07, 0.798923, 0.133333, 1, 0.601243, 1.76364e-09, -4.57046e-07, 0.799066, 0.166667, 1, 0.602536, 1.76148e-09, -4.58029e-07, 0.798091, 0.2, 1, 0.620837, 1.73023e-09, -4.7194e-07, 0.78394, 0.233333, 1, 0.537732, 1.86089e-09, -4.08766e-07, 0.843116, 0.266667, 1, 0.438495, 1.98371e-09, -3.3333e-07, 0.898734, 0.3, 1, 0.40058, 2.02239e-09, -3.04508e-07, 0.916262, 0.333333, 1, 0.375376, 2.0458e-09, -2.85349e-07, 0.926873, 0.366667, 1, 0.350592, 2.06711e-09, -2.66509e-07, 0.936528, 0.4, 1, 0.492716, 1.92068e-09, -3.74547e-07, 0.87019)
 tracks/11/type = "position_3d"
 tracks/11/imported = true
 tracks/11/enabled = true
@@ -2508,7 +2508,7 @@ tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = PackedFloat32Array(0, 1, 0.707107, 0.707107, -7.27735e-07, 7.27735e-07)
 
-[sub_resource type="Animation" id="Animation_0jldf"]
+[sub_resource type="Animation" id="Animation_va127"]
 resource_name = "Sleep"
 length = 2.0
 loop_mode = 1
@@ -2525,7 +2525,7 @@ tracks/1/enabled = true
 tracks/1/path = NodePath("PepperArmature/Skeleton3D:Body")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.1, 1, 0.984375, 1, 1.07487, 0.133333, 1, 0.974074, 1, 1.09777, 0.166667, 1, 0.962384, 1, 1.11913, 0.2, 1, 0.95, 1, 1.13866, 0.233333, 1, 0.937616, 1, 1.15605, 0.266667, 1, 0.925926, 1, 1.17099, 0.3, 1, 0.915625, 1, 1.18318, 0.333333, 1, 0.907407, 1, 1.1923, 0.366667, 1, 0.901968, 1, 1.19802, 0.4, 1, 0.9, 1, 1.2, 0.6, 1, 0.9, 1, 1.2, 0.633333, 1, 0.901013, 1, 1.19797, 0.666667, 1, 0.903935, 1, 1.19213, 0.7, 1, 0.908594, 1, 1.18281, 0.733333, 1, 0.914815, 1, 1.17037, 0.766667, 1, 0.922425, 1, 1.15515, 0.8, 1, 0.93125, 1, 1.1375, 0.833333, 1, 0.941117, 1, 1.11777, 0.866667, 1, 0.951852, 1, 1.0963, 0.9, 1, 0.963281, 1, 1.07344, 0.933333, 1, 0.975231, 1, 1.04954, 0.966667, 1, 0.987529, 1, 1.02494, 1.03333, 1, 1.01247, 1, 0.975058, 1.06667, 1, 1.02477, 1, 0.950463, 1.1, 1, 1.03672, 1, 0.926563, 1.13333, 1, 1.04815, 1, 0.903704, 1.16667, 1, 1.05888, 1, 0.882234, 1.2, 1, 1.06875, 1, 0.8625, 1.23333, 1, 1.07758, 1, 0.84485, 1.26667, 1, 1.08519, 1, 0.82963, 1.3, 1, 1.09141, 1, 0.817187, 1.33333, 1, 1.09606, 1, 0.80787, 1.36667, 1, 1.09899, 1, 0.802025, 1.4, 1, 1.1, 1, 0.8, 1.6, 1, 1.1, 1, 0.8, 1.63333, 1, 1.09803, 1, 0.801983, 1.66667, 1, 1.09259, 1, 0.807702, 1.7, 1, 1.08438, 1, 0.816819, 1.73333, 1, 1.07407, 1, 0.829008, 1.76667, 1, 1.06238, 1, 0.843951, 1.8, 1, 1.05, 1, 0.861339, 1.83333, 1, 1.03762, 1, 0.880865, 1.86667, 1, 1.02593, 1, 0.902228, 1.9, 1, 1.01562, 1, 0.925127, 2, 1, 1, 1, 1)
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.1, 1, 0.984375, 1, 1.07487, 0.133333, 1, 0.974074, 1, 1.09777, 0.166667, 1, 0.962384, 1, 1.11913, 0.2, 1, 0.95, 1, 1.13866, 0.233333, 1, 0.937616, 1, 1.15605, 0.266667, 1, 0.925926, 1, 1.17099, 0.3, 1, 0.915625, 1, 1.18318, 0.333333, 1, 0.907407, 1, 1.1923, 0.366667, 1, 0.901968, 1, 1.19802, 0.4, 1, 0.9, 1, 1.2, 0.6, 1, 0.9, 1, 1.2, 0.633333, 1, 0.901013, 1, 1.19797, 0.666667, 1, 0.903935, 1, 1.19213, 0.7, 1, 0.908594, 1, 1.18281, 0.733333, 1, 0.914815, 1, 1.17037, 0.766667, 1, 0.922425, 1, 1.15515, 0.8, 1, 0.93125, 1, 1.1375, 0.833333, 1, 0.941117, 1, 1.11777, 0.866667, 1, 0.951852, 1, 1.0963, 0.9, 1, 0.963281, 1, 1.07344, 0.933333, 1, 0.975231, 1, 1.04954, 0.966667, 1, 0.987529, 1, 1.02494, 1.03333, 1, 1.01247, 1, 0.975058, 1.06667, 1, 1.02477, 1, 0.950463, 1.1, 1, 1.03672, 1, 0.926563, 1.13333, 1, 1.04815, 1, 0.903704, 1.16667, 1, 1.05888, 1, 0.882234, 1.2, 1, 1.06875, 1, 0.8625, 1.23333, 1, 1.07758, 1, 0.84485, 1.26667, 1, 1.08519, 1, 0.82963, 1.3, 1, 1.09141, 1, 0.817187, 1.33333, 1, 1.09606, 1, 0.80787, 1.36667, 1, 1.09899, 1, 0.802025, 1.4, 1, 1.1, 1, 0.8, 1.6, 1, 1.1, 1, 0.8, 1.63333, 1, 1.09803, 1, 0.801983, 1.66667, 1, 1.09259, 1, 0.807702, 1.7, 1, 1.08438, 1, 0.816819, 1.73333, 1, 1.07407, 1, 0.829008, 1.76667, 1, 1.06238, 1, 0.843951, 1.8, 1, 1.05, 1, 0.861339, 1.83333, 1, 1.03762, 1, 0.880865, 1.86667, 1, 1.02593, 1, 0.902228, 1.9, 1, 1.01563, 1, 0.925127, 2, 1, 1, 1, 1)
 tracks/2/type = "position_3d"
 tracks/2/imported = true
 tracks/2/enabled = true
@@ -2758,7 +2758,7 @@ tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = PackedFloat32Array(0, 1, 0.707107, 0.707107, -7.27735e-07, 7.27735e-07)
 
-[sub_resource type="Animation" id="Animation_iqfhi"]
+[sub_resource type="Animation" id="Animation_rjje1"]
 resource_name = "Walk"
 length = 0.333333
 loop_mode = 1
@@ -3008,7 +3008,7 @@ tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = PackedFloat32Array(0, 1, 1.37679e-07, -0.707108, -0.707105, 1.37679e-07)
 
-[sub_resource type="Animation" id="Animation_qp2rw"]
+[sub_resource type="Animation" id="Animation_4lgd6"]
 resource_name = "Crouch-middle-loop"
 length = 2.0
 loop_mode = 1
@@ -3258,21 +3258,21 @@ tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = PackedFloat32Array(0, 1, 0.707107, 0.707107, -7.27735e-07, 7.27735e-07)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ola4h"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3oq8h"]
 _data = {
-"Breathe": SubResource("Animation_lqtw0"),
-"Close Eyes": SubResource("Animation_uw2tr"),
-"Crouch-begin": SubResource("Animation_8mvnk"),
-"Crouch-end": SubResource("Animation_3a2aa"),
-"Crouch-middle": SubResource("Animation_qp2rw"),
-"Dash-end": SubResource("Animation_f1awe"),
-"Dash-middle": SubResource("Animation_lfkmo"),
-"Dash-start": SubResource("Animation_kpd6e"),
-"Open Eyes": SubResource("Animation_6p20p"),
-"RestPose": SubResource("Animation_8e52t"),
-"Run": SubResource("Animation_exc6j"),
-"Sleep": SubResource("Animation_0jldf"),
-"Walk": SubResource("Animation_iqfhi")
+"Breathe": SubResource("Animation_hj0j2"),
+"Close Eyes": SubResource("Animation_yltkg"),
+"Crouch-begin": SubResource("Animation_ncfwm"),
+"Crouch-end": SubResource("Animation_rg343"),
+"Crouch-middle": SubResource("Animation_4lgd6"),
+"Dash-end": SubResource("Animation_4sgjd"),
+"Dash-middle": SubResource("Animation_ikgpj"),
+"Dash-start": SubResource("Animation_1o52f"),
+"Open Eyes": SubResource("Animation_0obob"),
+"RestPose": SubResource("Animation_nekyy"),
+"Run": SubResource("Animation_kissp"),
+"Sleep": SubResource("Animation_va127"),
+"Walk": SubResource("Animation_rjje1")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_en7qe"]
@@ -3435,28 +3435,21 @@ rotation_speed = 5.0
 [node name="PepperModel" parent="." instance=ExtResource("2_iyfol")]
 
 [node name="Skeleton3D" parent="PepperModel/PepperArmature" index="0"]
-bones/0/position = Vector3(3.62654e-11, 0.250675, -0.238325)
-bones/0/scale = Vector3(1, 0.999932, 1.00007)
-bones/1/scale = Vector3(1, 1.00007, 0.999932)
 bones/2/rotation = Quaternion(-2.68872e-07, 0.707108, 0.707105, 1.37679e-07)
-bones/3/rotation = Quaternion(-1.37679e-07, 0.707108, 0.707105, -1.37679e-07)
-bones/6/rotation = Quaternion(0.707107, -0.707107, 8.12029e-07, 8.12029e-07)
+bones/3/rotation = Quaternion(-1.37678e-07, 0.707108, 0.707105, -1.37679e-07)
+bones/6/rotation = Quaternion(0.707107, -0.707107, 8.12028e-07, 8.12028e-07)
 bones/7/rotation = Quaternion(0.707107, -0.707107, 7.27735e-07, 7.27735e-07)
-bones/8/rotation = Quaternion(0.707107, 0.707107, -8.12029e-07, 8.12029e-07)
+bones/8/rotation = Quaternion(0.707107, 0.707107, -8.12028e-07, 8.12028e-07)
 bones/9/rotation = Quaternion(0.707107, 0.707107, -7.27735e-07, 7.27735e-07)
 bones/14/rotation = Quaternion(0.707105, -1.30516e-06, -1.43524e-06, 0.707108)
-bones/14/scale = Vector3(1, 0.999932, 1.00007)
-bones/15/rotation = Quaternion(0.922927, -1.58155e-07, -9.24468e-08, -0.384974)
-bones/15/scale = Vector3(1, 0.999993, 1.00001)
-bones/16/rotation = Quaternion(0.288627, 1.44801e-09, -2.20478e-07, 0.957442)
-bones/17/rotation = Quaternion(0.395204, 2.02753e-09, -3.00421e-07, 0.918593)
-bones/18/position = Vector3(6.19546e-08, -0.0944325, -0.414337)
-bones/18/scale = Vector3(1, 1.00007, 0.999932)
-bones/19/scale = Vector3(1, 0.999932, 1.00007)
+bones/15/rotation = Quaternion(0.887011, 2.11572e-07, -2.72491e-07, -0.461748)
+bones/16/rotation = Quaternion(0.173649, 1.4894e-09, -1.32648e-07, 0.984808)
+bones/17/rotation = Quaternion(0.216439, 2.15487e-09, -1.6453e-07, 0.976296)
+bones/19/rotation = Quaternion(0.707107, -4.90336e-07, -5.55385e-07, 0.707107)
+bones/19/scale = Vector3(1, 1, 1)
 bones/20/rotation = Quaternion(0.707107, 1.2004e-06, 1.52561e-06, 0.707107)
-bones/20/scale = Vector3(1, 0.999932, 1.00007)
-bones/21/scale = Vector3(1, 0.999932, 1.00007)
-bones/22/scale = Vector3(1, 1.00007, 0.999932)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/scale = Vector3(1, 1, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.177947, 0)
@@ -3499,7 +3492,7 @@ script = ExtResource("9_g6slj")
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../PepperModel")
 libraries = {
-"": SubResource("AnimationLibrary_ola4h")
+"": SubResource("AnimationLibrary_3oq8h")
 }
 tree_root = SubResource("AnimationNodeStateMachine_87do6")
 anim_player = NodePath("../PepperModel/AnimationPlayer")

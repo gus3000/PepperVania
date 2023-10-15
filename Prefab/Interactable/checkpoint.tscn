@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyk0or5ug3be3"]
+
+[ext_resource type="PackedScene" uid="uid://dn5koaw0cf65s" path="res://Prefab/Interactable/interactable.tscn" id="1_ylhks"]
+[ext_resource type="PackedScene" uid="uid://bf5a7ipxhc7fv" path="res://Models/Interactable/cat_tree.blend" id="2_cwmlm"]
+
+[node name="Checkpoint" instance=ExtResource("1_ylhks")]
+
+[node name="CatTree" parent="." index="1" instance=ExtResource("2_cwmlm")]
