@@ -19,15 +19,16 @@ var direction: Vector3:
 		return get_viewport().get_camera_3d().basis * Vector3(input_dir.x, 0, input_dir.y)
 
 
-func default_movement(delta) -> void:
+func default_movement(delta, speed = -1) -> void:
+	if speed == -1: speed = player.speed
 	default_rotation(delta)
 	var dir = direction
 	if dir:
-		player.velocity.x = dir.x * player.speed
-		player.velocity.z = dir.z * player.speed
+		player.velocity.x = dir.x * speed
+		player.velocity.z = dir.z * speed
 	else:
-		player.velocity.x = move_toward(player.velocity.x, 0, player.speed)
-		player.velocity.z = move_toward(player.velocity.z, 0, player.speed)
+		player.velocity.x = move_toward(player.velocity.x, 0, speed)
+		player.velocity.z = move_toward(player.velocity.z, 0, speed)
 
 	player.velocity.y -= player.gravity * delta
 
@@ -40,7 +41,7 @@ func default_rotation(delta: float) -> void:
 
 
 func default_transitions(allowed: Array[String]) -> void:
-	var all_transitions = ["Air", "Dash", "Idle", "Run"]
+	var all_transitions = ["Air", "Crouch", "Dash", "Idle", "Run", "Crouch_Idle", "Crouch_Walk"]
 	if allowed == null:
 		allowed = all_transitions
 
@@ -48,17 +49,23 @@ func default_transitions(allowed: Array[String]) -> void:
 		return state_machine.transition_to("Dash")
 
 	if "Air" in allowed and not player.is_on_floor():
-			return state_machine.transition_to("Air")
-
-	if "Run" in allowed and player.is_on_floor() and not input_vector_raw.is_zero_approx():
+		return state_machine.transition_to("Air")
+	
+	if "Crouch_Walk" in allowed and Input.is_action_pressed("crouch") and not is_input_zero():
+		return state_machine.transition_to("Crouch_Walk")
+	
+	if "Run" in allowed and not Input.is_action_pressed("crouch") and not is_input_zero():
 		return state_machine.transition_to("Run")
 
-	if "Idle" in allowed and player.is_on_floor() and input_vector_raw.is_zero_approx():
+	if "Crouch_Idle" in allowed and Input.is_action_pressed("crouch") and is_input_zero():
+		return state_machine.transition_to("Crouch_Idle")
+	
+	if "Idle" in allowed and not Input.is_action_pressed("crouch") and is_input_zero():
 		return state_machine.transition_to("Idle")
 
 
 func is_input_zero() -> bool:
-	return input_vector_raw.is_equal_approx(Vector2.ZERO)
+	return input_vector_raw.is_zero_approx()
 
 func default_interact():
 	if player.interact_target == null:

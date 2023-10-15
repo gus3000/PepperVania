@@ -29,7 +29,9 @@ func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
 	assert(
 		has_node(target_state_name), 'tried to transition to unknown state "%s"' % target_state_name
 	)
-
+	if state.name == target_state_name:
+		push_error("Trying to transition to same state %s" % target_state_name)
+		return
 	state.exit()
 	state = get_node(target_state_name)
 	state.enter(msg)

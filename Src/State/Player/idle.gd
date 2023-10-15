@@ -10,7 +10,7 @@ func enter(_msg := {}) -> void:
 
 func update(_delta: float) -> void:
 	default_interact()
-	default_transitions(["Air", "Dash", "Run"])
+	default_transitions(["Air", "Dash", "Run", "Crouch_Idle"])
 
 
 func exit() -> void:

@@ -5,7 +5,6 @@ digraph player_state {
     air;
     dash;
     idle;
-    walk;
     run;
     crouch_idle;
     crouch_walk;
@@ -16,23 +15,16 @@ digraph player_state {
     
     idle -> air;
     idle -> dash;
-    idle -> walk;
+    idle -> run;
     idle -> crouch_idle;
-    
-    walk -> air;
-    walk -> dash;
-    walk -> idle;
-    walk -> run;
-    walk -> crouch_walk;
     
     run -> air;
     run -> dash;
-    run -> walk;
     run -> crouch_walk;
     
     crouch_idle -> idle;
     crouch_idle -> crouch_walk;
     
-    crouch_walk -> walk;
+    crouch_walk -> run;
     crouch_walk -> crouch_idle;
 }

@@ -10,6 +10,7 @@ extends CharacterBody3D
 #@export var jump_impulse: float = 5
 @export var dash_distance: float = 3
 @export var dash_speed: float = 10
+@export var crouch_speed: float = 3
 
 @onready var animator: AnimationTree = $AnimationTree
 @onready var interact_targets: Array[Interactable] = []
