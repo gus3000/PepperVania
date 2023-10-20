@@ -44,23 +44,26 @@ func default_transitions(allowed: Array[String]) -> void:
 	var all_transitions = ["Air", "Crouch", "Dash", "Idle", "Run", "Crouch_Idle", "Crouch_Walk"]
 	if allowed == null:
 		allowed = all_transitions
+	
+	var grounded = player.is_on_floor()
+	var crouch = Input.is_action_pressed("crouch")
 
 	if "Dash" in allowed and Input.is_action_just_pressed("dash"):
 		return state_machine.transition_to("Dash")
 
-	if "Air" in allowed and not player.is_on_floor():
+	if "Air" in allowed and not grounded:
 		return state_machine.transition_to("Air")
 	
-	if "Crouch_Walk" in allowed and Input.is_action_pressed("crouch") and not is_input_zero():
+	if "Crouch_Walk" in allowed and grounded and crouch and not is_input_zero():
 		return state_machine.transition_to("Crouch_Walk")
 	
-	if "Run" in allowed and not Input.is_action_pressed("crouch") and not is_input_zero():
+	if "Run" in allowed and grounded and not crouch and not is_input_zero():
 		return state_machine.transition_to("Run")
 
-	if "Crouch_Idle" in allowed and Input.is_action_pressed("crouch") and is_input_zero():
+	if "Crouch_Idle" and grounded in allowed and crouch and is_input_zero():
 		return state_machine.transition_to("Crouch_Idle")
 	
-	if "Idle" in allowed and not Input.is_action_pressed("crouch") and is_input_zero():
+	if "Idle" in allowed and grounded and not crouch and is_input_zero():
 		return state_machine.transition_to("Idle")
 
 
