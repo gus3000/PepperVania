@@ -3426,9 +3426,9 @@ states/Move/position = Vector2(517, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ep85p"), "Idle", "Move", SubResource("AnimationNodeStateMachineTransition_hb5gy"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_6vyd4"), "Dash", "Idle", SubResource("AnimationNodeStateMachineTransition_vvw3b"), "Idle", "Dash", SubResource("AnimationNodeStateMachineTransition_fmrar"), "Move", "Dash", SubResource("AnimationNodeStateMachineTransition_4lavd"), "Idle", "Crouching", SubResource("AnimationNodeStateMachineTransition_xkm4n"), "Crouching", "Idle", SubResource("AnimationNodeStateMachineTransition_e3erh"), "Move", "Crouching", SubResource("AnimationNodeStateMachineTransition_ke888")]
 graph_offset = Vector2(-351, 60)
 
-[node name="PepperCharacter" type="CharacterBody3D" node_paths=PackedStringArray("point_to_follow")]
+[node name="PepperCharacter" type="CharacterBody3D" node_paths=PackedStringArray("base_point_to_follow")]
 script = ExtResource("2_7c7ou")
-point_to_follow = NodePath("LookAtTarget")
+base_point_to_follow = NodePath("BaseLookAtTarget")
 speed = 4.0
 rotation_speed = 5.0
 
@@ -3461,7 +3461,7 @@ shape = SubResource("CapsuleShape3D_g7lo2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.299321, 0.213356)
 shape = SubResource("SphereShape3D_ulylx")
 
-[node name="LookAtTarget" type="Marker3D" parent="."]
+[node name="BaseLookAtTarget" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.320783, 0.682144)
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("subject", "state")]

@@ -1,8 +1,9 @@
 class_name Pepper
 extends CharacterBody3D
 
-@export var point_to_follow: Node3D
+signal update_point_to_follow(new_point: Node3D)
 
+@export var base_point_to_follow: Node3D
 
 @export var speed: float = 5
 @export var rotation_speed: float = 10
@@ -18,33 +19,27 @@ extends CharacterBody3D
 	get:
 		return interact_targets[0] if interact_targets else null
 
-@onready var point_to_follow_origin = point_to_follow.position
-
 
 func _ready():
-	update_camera()
 	pass
 
+
 func _process(delta):
-	update_camera()
+	pass
+
+func looking_at() -> Node3D:
+	if interact_targets:
+		return interact_targets[0]
+	else:
+		return base_point_to_follow
 
 func add_interact_target(target: Interactable):
 	interact_targets.append(target)
-	# update_camera()
+	update_point_to_follow.emit(interact_targets[0])
 
 
 func remove_interact_target(target: Interactable):
 	interact_targets.erase(target)
-	# update_camera()
+	update_point_to_follow.emit(looking_at())
 
 
-func update_camera():
-	# print("targets : ", interact_targets)
-	if interact_target:
-		# print("following ", interact_target)
-		point_to_follow.global_position = interact_target.global_position
-	else:
-		# print("following self")
-		point_to_follow.position = point_to_follow_origin
-	# print("point to follow : ", point_to_follow.position, point_to_follow.global_position)
-	

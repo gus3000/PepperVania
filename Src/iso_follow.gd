@@ -4,10 +4,15 @@ extends Camera3D
 const CAMERA_ANGLE: float = -30
 const DISTANCE_FROM_PLAYER: float = 10
 
-@export var point_to_follow: Node3D
+@export var player: Pepper
+
 @export var direction: IsoDirection = IsoDirection.BackwardsLeft
-@export var follow_speed = 5
+@export var follow_speed = 0.5
 @export var dead_zone: float = 1
+@export var focus_strength: float = 0.5
+
+@onready var point_to_follow: Node3D = player.base_point_to_follow
+
 
 var _delta_vector: Vector3
 
@@ -29,13 +34,18 @@ func _ready():
 
 
 func _process(delta):
-	var focus_point = point_to_follow.global_position
+	var focus_point = point_to_follow.global_position.lerp(player.base_point_to_follow.global_position, focus_strength)
 	var exact_goal = focus_point + _delta_vector
 	var distance_to_delta = global_position.distance_to(exact_goal)
 	if distance_to_delta > dead_zone:
 		var delta_vector = exact_goal - global_position
 		var lazy_goal = global_position + delta_vector * (distance_to_delta - dead_zone)
-		global_position = global_position.lerp(lazy_goal, delta * follow_speed)
+		var blend = pow(0.5,delta * follow_speed)
+		global_position = lazy_goal.lerp(global_position, blend)
 
 
 enum IsoDirection {BackwardsLeft = -135, BackwardsRight = 135, ForwardLeft = -45, ForwardRight = 45}
+
+
+func _on_player_update_point_to_follow(new_point:Node3D):
+	point_to_follow = new_point

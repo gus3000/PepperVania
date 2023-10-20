@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c84spa6wnj46f"]
+
+[ext_resource type="Script" path="res://Src/Debug/debug_marker.gd" id="1_t82qc"]
+[ext_resource type="PackedScene" uid="uid://bupxupfl1eilm" path="res://Models/Debug/marker.blend" id="2_17ogk"]
+
+[node name="DebugMarker" type="Marker3D"]
+script = ExtResource("1_t82qc")
+
+[node name="marker-4d4ca6f1ef2260b81515494bddc4ccdc" parent="." instance=ExtResource("2_17ogk")]
