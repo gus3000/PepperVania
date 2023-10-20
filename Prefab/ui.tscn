@@ -3,9 +3,10 @@
 [ext_resource type="Script" path="res://Src/UI/ui.gd" id="1_chrks"]
 [ext_resource type="PackedScene" uid="uid://bebwui3ke7gfe" path="res://Prefab/UI/ui_controller.tscn" id="2_e58qj"]
 
-[node name="UI" type="Node" node_paths=PackedStringArray("ui_controller")]
+[node name="UI" type="Node" node_paths=PackedStringArray("ui_controller", "fps_counter")]
 script = ExtResource("1_chrks")
 ui_controller = NodePath("CanvasLayer/ui_controller")
+fps_counter = NodePath("CanvasLayer/Fps")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -31,3 +32,7 @@ grow_horizontal = 1
 grow_vertical = 0
 scale = Vector2(0.25, 0.25)
 pivot_offset = Vector2(200, -150)
+
+[node name="Fps" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0

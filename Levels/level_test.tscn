@@ -5,8 +5,14 @@
 
 [node name="Level" instance=ExtResource("1_q5jug")]
 
+[node name="Player" parent="." index="2"]
+gravity = 20.0
+
 [node name="level_test" parent="." index="5" instance=ExtResource("1_igl2w")]
 
-[editable path="level_test"]
+[node name="Chest" parent="level_test/chest-prefab" index="0"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -1.90735e-06, 0)
+
 [editable path="UI"]
 [editable path="UI/CanvasLayer/ui_controller"]
+[editable path="level_test"]

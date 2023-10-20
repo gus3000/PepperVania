@@ -1,6 +1,7 @@
 extends Node
 
 @export var ui_controller:UiController
+@export var fps_counter:Label
 
 func _process(_delta):
 	var controller_state = UiController.ControllerState.new()
@@ -12,3 +13,5 @@ func _process(_delta):
 	# ui_controller.set_joystick_position(UiController.JoystickSide.Right, camera_input)
 
 	ui_controller.set_controller_state(controller_state)
+
+	fps_counter.text = str(Engine.get_frames_per_second())

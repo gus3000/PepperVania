@@ -3431,6 +3431,7 @@ script = ExtResource("2_7c7ou")
 base_point_to_follow = NodePath("BaseLookAtTarget")
 speed = 4.0
 rotation_speed = 5.0
+gravity = 100.0
 
 [node name="PepperModel" parent="." instance=ExtResource("2_iyfol")]
 
@@ -3446,13 +3447,10 @@ bones/15/rotation = Quaternion(0.887011, 2.11572e-07, -2.72491e-07, -0.461748)
 bones/16/rotation = Quaternion(0.173649, 1.4894e-09, -1.32648e-07, 0.984808)
 bones/17/rotation = Quaternion(0.216439, 2.15487e-09, -1.6453e-07, 0.976296)
 bones/19/rotation = Quaternion(0.707107, -4.90336e-07, -5.55385e-07, 0.707107)
-bones/19/scale = Vector3(1, 1, 1)
 bones/20/rotation = Quaternion(0.707107, 1.2004e-06, 1.52561e-06, 0.707107)
-bones/20/scale = Vector3(1, 1, 1)
-bones/21/scale = Vector3(1, 1, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.177947, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1.295, 0, -1, -5.66062e-08, 0, 0.232804, -2.39789e-09)
 shape = SubResource("CapsuleShape3D_g7lo2")
 
 [node name="Trigger" type="Area3D" parent="."]

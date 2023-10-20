@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dux72qukuqywb"]
 
 [ext_resource type="PackedScene" uid="uid://c8ayyj7wew3j2" path="res://Prefab/pepper.tscn" id="1_3o8xi"]
-[ext_resource type="Script" path="res://Src/iso_follow.gd" id="2_p3wqt"]
 [ext_resource type="PackedScene" uid="uid://dau8fcmtoviuv" path="res://Prefab/ui.tscn" id="3_gkvds"]
 [ext_resource type="PackedScene" uid="uid://c84spa6wnj46f" path="res://Prefab/Debug/debug_marker.tscn" id="4_ee4ff"]
+[ext_resource type="PackedScene" uid="uid://7u63md1n76mx" path="res://Prefab/camera.tscn" id="4_mb645"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_job0q"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -31,19 +31,13 @@ environment = SubResource("Environment_m3pu7")
 
 [node name="Lights" type="Node" parent="."]
 
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
-transform = Transform3D(-0.707107, 0.353553, -0.612373, 0, 0.866026, 0.5, 0.707107, 0.353553, -0.612373, -13.9914, 11.3932, -13.5198)
-fov = 15.0
-size = 5.0
-far = 50.0
-script = ExtResource("2_p3wqt")
-player = NodePath("../Player")
-follow_speed = 2.0
-
 [node name="UI" parent="." instance=ExtResource("3_gkvds")]
 
 [node name="DebugMarker" parent="." node_paths=PackedStringArray("point_to_follow") instance=ExtResource("4_ee4ff")]
 point_to_follow = NodePath("../Player/BaseLookAtTarget")
 
-[connection signal="update_point_to_follow" from="Player" to="Camera3D" method="_on_player_update_point_to_follow"]
+[node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_mb645")]
+transform = Transform3D(-0.707107, 0.353553, -0.612373, 0, 0.866026, 0.5, 0.707107, 0.353553, -0.612373, -13.9914, 11.3932, -13.5198)
+player = NodePath("../Player")
+
 [connection signal="update_point_to_follow" from="Player" to="DebugMarker" method="_on_player_update_point_to_follow"]

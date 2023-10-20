@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhrigys1lvmnt"]
+[gd_scene load_steps=5 format=3 uid="uid://bhrigys1lvmnt"]
 
 [ext_resource type="PackedScene" uid="uid://dn5koaw0cf65s" path="res://Prefab/Interactable/interactable.tscn" id="1_fmvob"]
 [ext_resource type="Script" path="res://Src/Interactable/chest.gd" id="2_0nha7"]
 [ext_resource type="PackedScene" uid="uid://bgwph8xwyvv42" path="res://Models/Interactable/chest.blend" id="2_t1afg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o1gxk"]
+size = Vector3(0.792969, 0.590332, 0.663513)
 
 [node name="Chest" instance=ExtResource("1_fmvob")]
 script = ExtResource("2_0nha7")
@@ -12,5 +15,11 @@ loot = ""
 
 [node name="Skeleton3D" parent="chest/ChestArmature" index="0"]
 bones/0/rotation = Quaternion(0, 0, 0, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.295166, 0.00601196)
+shape = SubResource("BoxShape3D_o1gxk")
 
 [editable path="chest"]

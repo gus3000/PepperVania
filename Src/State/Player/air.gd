@@ -2,7 +2,6 @@ extends PlayerState
 
 
 func enter(_msg := {}) -> void:
-	print_stack()
 	print("enter air")
 
 

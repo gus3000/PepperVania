@@ -7,7 +7,7 @@ const DISTANCE_FROM_PLAYER: float = 10
 @export var player: Pepper
 
 @export var direction: IsoDirection = IsoDirection.BackwardsLeft
-@export var follow_speed = 0.5
+@export var follow_speed = 2
 @export var dead_zone: float = 1
 @export var focus_strength: float = 0.5
 
